@@ -7,5 +7,13 @@ import 'rxjs/add/operator/map';
 })
 export class RepositoryService {
 
-  constructor(private http: HttpClient) { }
+private username: string;
+
+  constructor(private http: HttpClient) {
+    console.log("service is now ready!");
+    this.username = 'Mukabana';
+   }
+   getRepositoryInfo(){
+     return this.http.get("https://api.github.com/users/" + this.username);
+   }
 }
