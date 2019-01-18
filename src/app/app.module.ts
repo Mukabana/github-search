@@ -4,8 +4,9 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RepositoryComponent } from './components/repository/repository.component';
-import { UserFormComponent } from './components/user-form/user-form.component';
+import { RepositoryComponent } from './repository/repository.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import {RepositoryService} from './services/repository.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [RepositoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
