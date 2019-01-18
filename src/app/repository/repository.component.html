@@ -1,3 +1,12 @@
-<p>
-  repository works!
-</p>
+<div class="container">
+  <div class="row">
+    <div *ngFor='let repository of repositories'>
+      <ul>
+        <li>{{repository.projectName}} this project {{repository.description}}</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>

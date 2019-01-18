@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Repository} from '../repository';
 import {RepositoryService} from '../services/repository.service';
 
 
@@ -9,6 +10,7 @@ import {RepositoryService} from '../services/repository.service';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
+  repositories=[]
 
   constructor() { }
 

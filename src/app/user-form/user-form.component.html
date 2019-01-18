@@ -1,3 +1,16 @@
-<p>
-  user-form works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <form (ngSubmit)='submitUsername()' #userForm='ngForm'>
+      <div class="form-group">
+        <label for="name">Username</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="newUser.userName" name="userName" #userName="ngModel" required>
+        <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
+          <p>Please enter the user name</p>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
