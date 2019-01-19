@@ -30,7 +30,7 @@ export class RepositoryComponent implements OnInit {
   })
   }
 
-  ngOnInit() {
+  ngOnInit() ;{
   }
 
 }
