@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {User} from '../user';
+import {RepositoryService} from '../services/repository.service';
 
 @Component({
   selector: 'app-user-form',
@@ -8,11 +9,12 @@ import {User} from '../user';
 })
 export class UserFormComponent implements OnInit {
 
-newUser=new User(0,"","","");
+userName: string;
+
 @Output() addUser=new EventEmitter<User>();
 
-submitUsername(){
-  this.addUser.emit(this.newUser);
+findRepository(){
+  this.repositoryservice.updateRepository(this.userName);
 }
 
   constructor() { }

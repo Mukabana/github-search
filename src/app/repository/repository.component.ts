@@ -12,9 +12,14 @@ import {RepositoryService} from '../services/repository.service';
 export class RepositoryComponent implements OnInit {
   Repository:any[];
   repositories: any[];
+  userName:string;
 
 
   constructor(private repositoryservice: RepositoryService) {
+
+
+  findRepository();{
+    this.repositoryservice.updateRepository(this.userName);
     this.repositoryservice.getRepositoryInfo().subscribe(Repository => {
       console.log(Repository);
       this.Repository = Repository;
@@ -22,9 +27,11 @@ export class RepositoryComponent implements OnInit {
     this.repositoryservice.getRepositoryrepositories().subscribe(repositories => {
       console.log(repositories);
       this.repositories = repositories;
-  });
+  })
+  }
 
   ngOnInit() {
   }
 
+}
 }

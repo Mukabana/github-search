@@ -1,16 +1,5 @@
-<div class="container-fluid">
-  <div class="row">
-    <form (ngSubmit)='submitUsername()' #userForm='ngForm'>
-      <div class="form-group">
-        <label for="name">Username</label>
-        <input type="text" class="form-control" id="name" [(ngModel)]="newUser.userName" name="userName" #userName="ngModel" required>
-        <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
-          <p>Please enter the user name</p>
-        </div>
-      </div>
-
-    </form>
-
+<form action="" class="user-form" (ngSubmit)='findRepository()' #userForm='ngForm'>
+  <div class="form-group">
+    <input type="text" class="text form-control" placeholder="Search git users with username" [(ngModel)]="userName" name="userName" onsubmit="findRepository()">
   </div>
-
-</div>
+</form>
