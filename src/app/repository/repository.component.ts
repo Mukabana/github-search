@@ -10,9 +10,13 @@ import {RepositoryService} from '../services/repository.service';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
-  repositories=[]
 
-  constructor() { }
+
+  constructor(private repositoryservice: RepositoryService) {
+    this.repositoryservice.getRepositoryInfo().subscribe(repository => {
+      console.log(repository)
+    });
+  }
 
   ngOnInit() {
   }
