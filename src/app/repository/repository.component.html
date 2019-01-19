@@ -1,12 +1,38 @@
-<div class="container">
-  <div class="row">
-    <div *ngFor='let repository of repositories'>
-      <ul>
-        <li>{{repository.projectName}} this project {{repository.description}}</li>
-      </ul>
+  <div *ngIf="Repository">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        {{Repository.name}} <small>({{Repository.login}})</small> <span *ngIf="Repository.company">, Works at {{Repository.company}}</span> {{Repository.location}}
+      </div>
+
+      <div class="panel-body">
+        <div class="row">
+
+          <div class="col-sm-3">
+            <img src="{{Repository.avatar_url}}" class="img-responsive" alt="Profile Image">
+          </div>
+
+          <div class="col-sm-5">
+            <ul class="list-group">
+              <li class="list-group-item" *ngIf="Repository.bio">{{Repository.bio}}</li>
+              <li class="list-group-item" *ngIf="Repository.hireable">Available for hire</li>
+              <li class="list-group-item" *ngIf="Repository.blog"><a href="{{Repository.blog}}" target="_blank">{{Repository.blog}}</a></li>
+              <li class="list-group-item" *ngIf="Repository.email"><a href="email to: {{Repository.email}}" target="_blank">{{Repository.email}}</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-4">
+            <div>
+              <p>
+                <span class="label label-default">{{Repository.followers}} Followers</span>
+                <span class="label label-primary">Following {{Repository.following}}</span>
+                <span class="label label-success">{{Repository.public_gists}} Public gists</span>
+                <span class="label label-info">{{Repository.public_repos}} Public Repos</span>
+              </p>
+              <p><a href="{{Repository.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on github</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
-
   </div>
-
-</div>

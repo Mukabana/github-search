@@ -10,11 +10,13 @@ import {RepositoryService} from '../services/repository.service';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
+  Repository:any[];
 
 
   constructor(private repositoryservice: RepositoryService) {
-    this.repositoryservice.getRepositoryInfo().subscribe(repository => {
-      console.log(repository)
+    this.repositoryservice.getRepositoryInfo().subscribe(Repository => {
+      console.log(Repository);
+      this.Repository = Repository;
     });
   }
 
