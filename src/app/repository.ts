@@ -14,6 +14,7 @@ export class Repository {
     public public gists: number,
     public public repos: number,
     public html_url: string,
+    public description: string,
   ) {
     this.showDetails = false;
   }

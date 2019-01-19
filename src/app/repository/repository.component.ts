@@ -11,6 +11,7 @@ import {RepositoryService} from '../services/repository.service';
 })
 export class RepositoryComponent implements OnInit {
   Repository:any[];
+  repositories: any[];
 
 
   constructor(private repositoryservice: RepositoryService) {
@@ -18,7 +19,10 @@ export class RepositoryComponent implements OnInit {
       console.log(Repository);
       this.Repository = Repository;
     });
-  }
+    this.repositoryservice.getRepositoryrepositories().subscribe(repositories => {
+      console.log(repositories);
+      this.repositories = repositories;
+  });
 
   ngOnInit() {
   }

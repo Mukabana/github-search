@@ -16,8 +16,13 @@ private clientsecret = 'd020a5ef1ca89b17d25fb710beeb0baeafe6ad67';
     console.log("service is now ready!");
     this.username = 'Mukabana';
    }
-   getRepositorInfo(){
+   getUserInfo(){
      return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
+     .map(res => res.json());
+   }
+
+   getRepositoryInfo(){
+     return this.http.get("https://api.github.com/users/" + this.username + "repositories?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
      .map(res => res.json());
    }
 }
